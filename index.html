@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Youming Pan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="header">
+    <h1>Basketball Community——To develop opportunities for the game of basketball in the Fremont community.</h1>
+</div>
+
+<div class="topnav">
+    <div class="logo">
+        <img src="images/logo.png" alt="Basketball Community Logo" width="59" height="55">
+    </div>
+    <div class="nav">
+        <a href="https://www.nba.com/">NBA</a>
+        <a href="https://www.cbaleague.com/#/">CBA</a>
+        <a href="example.html">Community</a>
+        <a href="example.html">Event</a>
+        <a href="example.html">News</a>
+        <a href="example.html">Basketball Court</a>
+        <form class="searchbar" action="#" method="get">
+            <input type="text" class="form-control" placeholder="Search">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <a href="#" class="login-button">Login</a>
+    </div>
+</div>
+
+<div class="scores">
+    <img src="images/score.png">
+</div>
+
+<div class="row">
+    <div class="column left">
+            <div class="slide-wrapper">
+                <div class="slide">
+                    <img src="images/1.jpg" alt="Image 1">
+                    <div class="text">
+                        <h3 class="h3">Court 1</h3>
+                        <p>The course is very open and has beautiful views.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/2.jpg" alt="Image 2">
+                    <div class="text">
+                        <h3 class="h3">Court 2</h3>
+                        <p>The court is located in a residential area and parking is very convenient for basketball lovers who live nearby.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/3.jpg" alt="Image 3">
+                    <div class="text">
+                        <h3 class="h3">Court 3</h3>
+                        <p>This court has good lighting at night, suitable for basketball lovers who like to play at night.</p>
+                    </div>
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+    </div>
+
+    <div class="column right">
+        <h2>Introduction</h2>
+        <p>The purpose of this website is to promote the Fremont community's basketball sustainability program, provide more opportunities for the community's basketball fans to play, and provide a platform for the community's basketball fans to exchange basketball experiences, book basketball friendlies, find suitable courts, and provide the latest and hottest basketball information.</p>
+        
+    </div>
+</div>
+
+<script>
+    let slideIndex = 1;
+    let autoSlideInterval;
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(function() {
+            changeSlide(1);
+        }, 3000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    function changeSlide(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        const slides = document.getElementsByClassName("slide");
+
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+    }
+
+    function manualChangeSlide(n) {
+        stopAutoSlide();
+        changeSlide(n);
+        startAutoSlide();
+    }
+
+    startAutoSlide();
+
+</script>
+
+<footer>
+    <p>
+        Lorem ipsum
+    </p>
+</footer>
+
+</body>
+</html>
